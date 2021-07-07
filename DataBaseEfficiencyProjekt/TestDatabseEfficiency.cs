@@ -112,9 +112,9 @@ namespace DataBaseEfficiencyProjekt
         {
             var command = new SqlCommand("Select * from [tblAuthors]", _connection);
             var authorsId = new int[10000000];
+            var count = 0;
             using (SqlDataReader reader = command.ExecuteReader())
             {
-                int count = 0;
                 while (reader.Read())
                 {
                     authorsId[count] = (int)reader["id"];
@@ -140,9 +140,9 @@ namespace DataBaseEfficiencyProjekt
         {
             var command = new SqlCommand("Select id from [tblAuthors]", _connection);
             var authorsId = new int[10000000];
+            var count = 0;
             using (SqlDataReader reader = command.ExecuteReader())
             {
-                int count = 0;
                 while (reader.Read())
                 {
                     authorsId[count] = (int)reader["id"];
